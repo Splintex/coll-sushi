@@ -21,7 +21,7 @@ img,fieldset {border:none;}
 input[type="submit"], button {cursor:pointer;}
 input[type='submit']::-moz-focus-inner{padding:0;border:0}
 textarea {overflow: auto;}
-input {
+input, button {
     margin: 0;
     padding: 0;
     border: 0;
@@ -46,11 +46,11 @@ table {
 /* ------------------------------------- //END Reset css --------------------------------------- */
 /* ----------------------------------------- Main styles --------------------------------------- */
 body{
+    padding: 0 5px;
     min-width: 1000px;
-    color: #474747;
-    @include pts_r;
-    font-size: 15px;
-    line-height: 1.4;
+    color: #524f4f;
+    font: normal 14px/1.2 'Calibri', Arial, sans-serif;
+    background: #d4d4d4;
 }
 a{
     color:#00919e;
@@ -59,15 +59,18 @@ a{
     }
 }
 .l-layout {
-    margin: 0 auto -1px;
     position: relative;
+    margin: 0 auto -107px;
+    width: 1000px;
     min-height: 100%;
     height: auto !important;
     height: 100%;
+    background: #f9f1de;
+    @include box-shadow(0 0 30px rgba(0,0,0,.4));
 }
 .push {
     clear: both;
-    height: 1px;
+    height: 107px;
 }
 .wrapper {
     overflow: hidden;
@@ -78,10 +81,185 @@ a{
 /* ------------------------------------ //END Main styles --------------------------------------- */
  
 /* ----------------------------------------- Header --------------------------------------------- */
-/* -------------------------------------- //END Header ------------------------------------------ */
+.header {
+    background: #fff;
+}
+.top-bar {
+    padding-right: 51px;
+    height: 29px;
+    line-height: 29px;
+    text-align: right;
+    border-bottom: 1px solid #d2d2d2;
+    @include background-image(linear-gradient(#fff, #e5e5e5));
+    button {
+        padding-left: 28px;
+        height: 21px;
+        border: 0;
+        color: #a76dae;
+        font-size: 16px;
+        @include calibri;
+        background: url(../img/icons/mob.png) 0 50% no-repeat;
+    }
+}
+.header__wrap {
+    padding: 5px 48px;
+    @extend %clr;
+}
+.logo {
+    float: left;
+    margin-right: 130px;
+    @extend %hide-text;
+    a {
+        display: block;
+        @include sized-sprite($icons, logo); 
+    }
+}
+.work {
+    float: left;
+    color: #a76dae;
+    font-size: 16px;
+    span {
+        display: block;
+        margin-bottom: 5px;
+        padding-left: 39px;
+    }
+}
+.work__title { 
+    display: block;
+}
+.work__time { 
+    color: #404040;
+    font-size: 24px;
+    background: url(../img/icons/time.png) 5px 50% no-repeat;
+}
+.work__deliv {
+    background: url(../img/icons/car.png) 0 100% no-repeat;
+}
 
+.header__cont {
+    float: right;
+    margin-top: 16px;
+    padding-left: 54px;
+    color: #a76dae;
+    font-weight: bold;
+    font-size: 21px;
+    border-left: 1px dotted #777;
+    div {
+        margin-bottom: -6px;
+    }
+    span, strong {
+        vertical-align: top;
+    }
+    strong {
+        color: #373737;
+        font-size: 37px;
+    }
+}
+
+.menu {
+    ul {
+        @extend %clr;
+        border-top: 1px solid #f5f5f5;
+        border-bottom: 1px solid #d2d2d2;
+    }
+    li {
+        float: left;
+        width: 25%;
+        text-align: center;
+        &:first-child {
+            a {
+                &:before,
+                &:after {
+                    display: none;
+                }
+            }
+        }
+    }
+    a {
+        position: relative;
+        display: block;
+        height: 38px;
+        line-height: 38px; 
+        color: #fff;
+        font-size: 16px;
+        text-decoration: none;
+        background: #8b5995 url(../img/icons/menu-bg.png) 0 0 repeat-x;
+        @include box-shadow(inset 0 1px 0 rgba(255,255,255,.5));
+        &:before,
+        &:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 1px;
+        }
+        &:before {
+            top: 0;
+            height: 38px;
+            @include background-image(linear-gradient(#834b81, #43264e));
+        }
+        &:after {
+            bottom: 0;
+            height: 15px;
+            @include box-shadow(0 0 10px rgba(0,0,0,.6));
+        }
+    }
+}
+
+/* -------------------------------------- //END Header ------------------------------------------ */
+  
 /* ------------------------------------- Independent blocks -------------------------------------- */
+
+// icons 
+.icon {display: inline-block;} 
+.icon_time {@include sized-sprite($icons, time);}
+.icon_car {@include sized-sprite($icons, car);}
+.icon_mob {@include sized-sprite($icons, mob);}
+
 /* ---------------------------------- //END Independent blocks ----------------------------------- */
 
 /* ----------------------------------------- Footer ---------------------------------------------- */
+.footer {
+    position: relative;
+    margin: 0 auto;
+    width: 1000px;
+    height: 107px;
+    overflow: hidden;
+    background: #8b5995 url(../img/icons/footer-bg.png) 0 100% repeat-x;
+    @include box-shadow(0 10px 30px 6px rgba(0,0,0,.2));
+}
+.menu_footer {
+    ul {
+        border-top-color: #d4d4d4;
+    }
+    li {
+        width: 17%;
+        &:first-child {
+            width: 15%;
+            a {
+                border: 0;
+            }
+        }
+    }     
+    a {
+        height: 32px;
+        line-height: 32px;
+        color: #3c3c3c;
+        font-size: 14px;
+        border-left: 1px solid #d4d4d4;
+        @include background-image(linear-gradient(#fff, #e7e7e7));
+        &:before,
+        &:after {
+            display: none;
+        }
+    }
+}
+.copy {
+    float: right;
+    padding: 19px 43px 0 0;
+    color: #fff;
+    text-align: right; 
+    p {
+        margin-bottom: 9px;
+    }
+}
 /* -------------------------------------- //END Footer ------------------------------------------- */

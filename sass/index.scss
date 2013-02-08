@@ -1,1 +1,36 @@
 @import "base";
+.banner {
+ 	img {
+ 		display: block;
+ 	}
+}
+.menu_products {
+    li {
+        width: 20%;
+    }
+    a {
+    	height: 37px;
+    	line-height: 37px;
+    	color: #4b4b4b;
+    	text-transform: uppercase;
+    	@include box-shadow(none);
+        @include background-image(linear-gradient(#fff, #e7e7e7));
+        &:before,
+        &:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 1px;
+        }
+        &:before {
+            @include background-image(linear-gradient(#e9e9e9 25%, #c5c5c5 75%, #d7d7d7 100%));
+        }
+        &:after {
+            @include box-shadow(0 0 10px rgba(0,0,0,.3));
+        }
+    }
+    .active {
+    	color: #fff;
+    	background: url(../img/icons/menu-bg.png) 0 0 repeat-x;
+    }
+}
