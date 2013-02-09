@@ -1,0 +1,37 @@
+.l-cols { overflow: hidden; }
+
+.sidebar { float: left; width: 240px; }
+
+.sidebar-nav { padding-top: 2px; }
+.sidebar-nav li { position: relative; padding: 0 5px 0 38px; height: 36px; line-height: 36px; }
+.sidebar-nav li:after { content: ""; position: absolute; left: 0; bottom: 0; height: 1px; width: 100%; background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iNTAlIiB4Mj0iMTAwJSIgeTI9IjUwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjxzdG9wIG9mZnNldD0iMjUlIiBzdG9wLWNvbG9yPSIjZGZkZmRmIi8+PHN0b3Agb2Zmc2V0PSI3NSUiIHN0b3AtY29sb3I9IiNkZmRmZGYiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA='); background-size: 100%; background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #ffffff), color-stop(25%, #dfdfdf), color-stop(75%, #dfdfdf), color-stop(100%, #ffffff)); background-image: -webkit-linear-gradient(left, #ffffff, #dfdfdf 25%, #dfdfdf 75%, #ffffff); background-image: -moz-linear-gradient(left, #ffffff, #dfdfdf 25%, #dfdfdf 75%, #ffffff); background-image: -o-linear-gradient(left, #ffffff, #dfdfdf 25%, #dfdfdf 75%, #ffffff); background-image: linear-gradient(left, #ffffff, #dfdfdf 25%, #dfdfdf 75%, #ffffff); }
+.sidebar-nav a { color: #4b4b4b; font-size: 16px; text-transform: uppercase; text-decoration: none; }
+.sidebar-nav a:hover { color: #a76dae; }
+
+.content { float: left; padding: 16px 15px 0; width: 725px; }
+.content h1 { margin-bottom: 18px; color: #000; font-size: 30px; font-weight: normal; }
+.content h2 { margin-bottom: 6px; color: #000; font-size: 18px; font-weight: normal; }
+.content p { margin-bottom: 17px; }
+
+.inner { background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iNTAlIiB4Mj0iMTAwJSIgeTI9IjUwJSI+PHN0b3Agb2Zmc2V0PSIyNDBweCIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjxzdG9wIG9mZnNldD0iMjQwcHgiIHN0b3AtY29sb3I9IiNmOWYxZGUiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmOWYxZGUiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA='); background-size: 100%; background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(240px, #ffffff), color-stop(240px, #f9f1de), color-stop(100%, #f9f1de)); background-image: -webkit-linear-gradient(left, #ffffff 240px, #f9f1de 240px, #f9f1de); background-image: -moz-linear-gradient(left, #ffffff 240px, #f9f1de 240px, #f9f1de); background-image: -o-linear-gradient(left, #ffffff 240px, #f9f1de 240px, #f9f1de); background-image: linear-gradient(left, #ffffff 240px, #f9f1de 240px, #f9f1de); }
+
+.about-img { float: right; margin: 0 0 15px 15px; }
+
+.action { margin-bottom: 13px; padding-bottom: 9px; border-bottom: 1px dashed #a1a1a1; }
+.action p { margin-bottom: 0; }
+.action ol { padding-left: 18px; list-style-type: decimal; }
+
+.action__img { position: relative; margin-bottom: 10px; }
+.action__img img { display: block; border: 2px solid #cec1c1; }
+.action__img .soc { right: 180px; bottom: 20px; }
+
+.action__title a { color: #000; text-decoration: none; }
+.action__title a:hover { text-decoration: underline; }
+.action__title span { padding-left: 10px; color: #fc1010; font-size: 11px; font-family: Arial; }
+
+.pagin { margin: 8px 0 18px; text-align: center; }
+.pagin a { display: inline-block; padding: 5px 8px; color: #7d00cd; font-size: 14px; font-family: Arial; }
+.pagin .prev { font-size: 12px; padding-left: 27px; background: url(../img/icons/prev.png) 0 50% no-repeat; }
+.pagin .next { font-size: 12px; padding-right: 27px; background: url(../img/icons/next.png) 100% 50% no-repeat; }
+.pagin .inactive { color: #000; text-decoration: none; cursor: default; }
+.pagin .active { background: #e5e5e5; text-decoration: none; -webkit-border-radius: 3px; -moz-border-radius: 3px; -ms-border-radius: 3px; -o-border-radius: 3px; border-radius: 3px; }

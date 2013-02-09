@@ -1,1 +1,138 @@
 @import "base";
+.l-cols {
+    overflow: hidden;
+    //background: #fff;
+}
+.sidebar {
+	float: left;
+	width: 240px;
+}
+.sidebar-nav {
+	padding-top: 2px;
+	li {
+		position: relative;
+		padding: 0 5px 0 38px;
+		height: 36px;
+		line-height: 36px;
+		&:after {
+			content: "";
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			height: 1px;
+			width: 100%;
+			@include background-image(linear-gradient(left, #fff, #dfdfdf 25%, #dfdfdf 75%, #fff));
+		}
+	}
+	a {
+		color: #4b4b4b;
+		font-size: 16px;
+		text-transform: uppercase;
+		text-decoration: none;
+		&:hover {
+			color: #a76dae;
+		}
+	}
+}
+
+.content {
+	float: left;
+	padding: 16px 15px 0;
+	width: 725px;
+	h1 {
+		margin-bottom: 18px;
+		color: #000;
+		font-size: 30px;
+		font-weight: normal;
+	}
+	h2 {
+		margin-bottom: 6px;
+		color: #000;
+		font-size: 18px;
+		font-weight: normal;
+	}
+	p {
+		margin-bottom: 17px;
+	}
+}
+.inner {
+	@include background-image(linear-gradient(left, #fff 240px, #f9f1de 240px, #f9f1de));
+} 
+
+// About us page 
+.about-img {
+	float: right;
+	margin: 0 0 15px 15px;
+} 
+
+// Actions page
+.action {
+	margin-bottom: 13px;
+	padding-bottom: 9px;
+	border-bottom: 1px dashed #a1a1a1;
+	p {
+		margin-bottom: 0;
+	}
+	ol {
+		padding-left: 18px;
+		list-style-type: decimal;
+	}
+}
+.action__img {
+	position: relative;
+	margin-bottom: 10px;
+	img {
+		display: block;
+		border: 2px solid #cec1c1;
+	}
+	.soc {
+		right: 180px;
+		bottom: 20px;
+	}
+}
+.action__title {
+	a {
+		color: #000;
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	span {
+		padding-left: 10px;
+		color: #fc1010;
+		font-size: 11px;
+		font-family: Arial;
+	}
+}
+.pagin {
+	margin: 8px 0 18px;
+	text-align: center;
+	a {
+		display: inline-block;
+		padding: 5px 8px;
+		color: #7d00cd;
+		font-size: 14px;
+		font-family: Arial;
+	}
+	.prev {
+		font-size: 12px;
+		padding-left: 27px;
+		background: url(../img/icons/prev.png) 0 50% no-repeat;
+	}
+	.next {
+		font-size: 12px;
+		padding-right: 27px;
+		background: url(../img/icons/next.png) 100% 50% no-repeat;
+	}
+	.inactive {
+		color: #000;
+		text-decoration: none;
+		cursor: default;
+	}
+	.active {
+		background: #e5e5e5;
+		text-decoration: none;
+		@include border-radius(3px);
+	}
+}

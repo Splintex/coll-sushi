@@ -1,0 +1,10 @@
+.lteie8 .nav_products, .lteie8 .nav_footer { background: #e7e7e7; }
+.lteie8 .product__descr { background: #fefefe; }
+.lteie8 .top-bar { background: #e5e5e5; }
+.lteie8 .nav a:before { background: #43264e; }
+
+* + html .product { display: inline; }
+
+.nav li { _width: 170px; _float: left; }
+
+.nav ul { _overflow: hidden; _height: 40px; }

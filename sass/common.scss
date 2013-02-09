@@ -78,6 +78,7 @@ a{
 .wrap {
     @extend %clr;
 }
+
 /* ------------------------------------ //END Main styles --------------------------------------- */
  
 /* ----------------------------------------- Header --------------------------------------------- */
@@ -136,7 +137,7 @@ a{
     background: url(../img/icons/car.png) 0 100% no-repeat;
 }
 
-.header__cont {
+.contacts {
     float: right;
     margin-top: 16px;
     padding-left: 54px;
@@ -156,7 +157,7 @@ a{
     }
 }
 
-.menu {
+.nav {
     ul {
         @extend %clr;
         border-top: 1px solid #f5f5f5;
@@ -183,7 +184,7 @@ a{
         color: #fff;
         font-size: 16px;
         text-decoration: none;
-        background: #8b5995 url(../img/icons/menu-bg.png) 0 0 repeat-x;
+        background: url(../img/icons/menu-bg.png) 0 0 repeat-x;
         @include box-shadow(inset 0 1px 0 rgba(255,255,255,.5));
         &:before,
         &:after {
@@ -202,6 +203,10 @@ a{
             height: 15px;
             @include box-shadow(0 0 10px rgba(0,0,0,.6));
         }
+    }
+    .active {
+        color: #7f4989;
+        background: url(../img/icons/menu-act-bg.png) 0 0 repeat-x;
     }
 }
 
@@ -227,7 +232,7 @@ a{
     background: #8b5995 url(../img/icons/footer-bg.png) 0 100% repeat-x;
     @include box-shadow(0 10px 30px 6px rgba(0,0,0,.2));
 }
-.menu_footer {
+.nav_footer {
     ul {
         border-top-color: #d4d4d4;
     }
@@ -261,5 +266,8 @@ a{
     p {
         margin-bottom: 9px;
     }
+}
+.contacts_footer {
+    display: none;
 }
 /* -------------------------------------- //END Footer ------------------------------------------- */
