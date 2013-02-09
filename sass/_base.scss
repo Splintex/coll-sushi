@@ -57,7 +57,7 @@ $break-large: 1180px;
 @mixin user-select($var) {
      -moz-user-select: $var;
   -webkit-user-select: $var;
-          user-select: $var;
+          user-select: $var; 
 }
 
 // box-sizing

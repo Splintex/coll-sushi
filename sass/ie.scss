@@ -2,7 +2,12 @@
 .lteie8 {
 	.nav_products,
 	.nav_footer {
-		background: #e7e7e7;
+		a {
+			background: #e7e7e7;
+		}
+		.active {
+        	background: url(../img/icons/menu-bg.png) 0 0 repeat-x;
+		}
 	}
 	.product__descr {
 		background: #fefefe;
@@ -17,18 +22,63 @@
 			}
 		}
 	}
+	.header__wrap {
+		overflow: hidden;
+	}
+	.popup {
+		background: #d4d4d4;
+	}
+	.btn_gray {
+		background: #dfdfdf;
+	}
 }
+// ie7
+
 *+ html {
-	.product {
+	.product, .soc a {
 		display: inline;
+	}
+	.field {
+		label, input, span, .rate-stars {
+			display: inline;
+		}
+	}
+	.btn {
+		line-height: 16px;
 	}
 }
 
-.nav li {
-	_width: 170px;
-	_float: left;
-}
-.nav ul {
-	_overflow: hidden;
-	_height: 40px;
+// ie6
+* html {
+	.header__wrap {
+		height: 92px;
+	}
+	.product, .soc a {
+		display: inline;
+	}
+	.nav_footer {
+		li {
+			width: 16%;
+		}
+	}
+	.banner {
+		height: 322px;
+	}
+	.logo a {
+		text-decoration: none;
+	}
+	.overlay {
+		position: absolute;
+	}
+	.action__img {
+		height: 234px;
+	}
+	.field {
+		label, input, span, .rate-stars {
+			display: inline;
+		}
+	}
+	.prod-item {
+		height: 100%;
+	}
 }
