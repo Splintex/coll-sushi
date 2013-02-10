@@ -51,6 +51,9 @@ body{
     color: #524f4f;
     font: normal 14px/1.2 'Calibri', Arial, sans-serif;
     background: #d4d4d4;
+    @include respond-to(mob-lan) {
+        min-width: 320px;
+    }   
 }
 a{
     color:#00919e;
@@ -67,6 +70,9 @@ a{
     height: 100%;
     background: #f9f1de;
     @include box-shadow(0 0 30px rgba(0,0,0,.4));
+    @include respond-to(mob-lan) {
+        width: 100%;
+    }
 }
 .push {
     clear: both;
@@ -84,6 +90,13 @@ a{
 /* ----------------------------------------- Header --------------------------------------------- */
 .header {
     background: #fff;
+    @include respond-to(mob-lan) {
+        background: none;
+        .contacts  {
+            display: none;
+        }
+    }
+
 }
 .top-bar {
     padding: 3px 51px 0 0;
@@ -91,6 +104,9 @@ a{
     text-align: right;
     border-bottom: 1px solid #d2d2d2;
     @include background-image(linear-gradient(#fff, #e5e5e5));
+    @include respond-to(mob-lan) {
+        text-align: center;
+    }
     button {
         padding-left: 28px;
         height: 21px;
@@ -102,13 +118,17 @@ a{
     }
 }
 .header__wrap {
-    padding: 5px 48px;
+    padding: 5px 48px; 
     @extend %clr;
+    @include respond-to(mob-lan) {
+        padding: 5px 1% 5px 3%;
+    }
 }
 .logo {
     float: left;
     margin-right: 130px;
     @extend %hide-text;
+    
     a {
         display: block;
         @include sized-sprite($icons, logo); 

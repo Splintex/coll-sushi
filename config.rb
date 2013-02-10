@@ -17,7 +17,7 @@ output_style = :compact
 
 # To disable debugging comments that display the original location of your selectors. Uncomment:
 line_comments = false
-
+output_style = :compressed
 preferred_syntax = :scss
 module Sass::Script::Functions
   def image_path(string)
