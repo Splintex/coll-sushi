@@ -4,9 +4,15 @@
 	.nav_footer {
 		a {
 			background: #e7e7e7;
+			&:hover {
+				background: #fff;
+			}
 		}
 		.active {
         	background: url(../img/icons/menu-bg.png) 0 0 repeat-x;
+        	&:hover {
+				background: url(../img/icons/menu-bg.png) 0 0 repeat-x;
+			}
 		}
 	}
 	.product__descr {
@@ -45,6 +51,8 @@
 	}
 	.btn {
 		line-height: 16px;
+		display: inline;
+		cursor: pointer;
 	}
 }
 
@@ -80,5 +88,15 @@
 	}
 	.prod-item {
 		height: 100%;
+	}
+	.btn {
+		display: inline;
+		cursor: pointer;
+	}
+	.btn_gray {
+		line-height: 15px;
+	}
+	.sidebar, .content {
+		background: #f9f1de;
 	}
 }

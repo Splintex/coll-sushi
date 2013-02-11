@@ -11,7 +11,7 @@ $icons: sprite-map("icons/*.png", $spacing: 10px);
 // responsive
 $break-1: 320px;
 $break-2: 480px;
-$break-3: 1900px;
+$break-3: 767px;
 @mixin respond-to($media) {
   @if $media == mob {
     @media only screen and (max-width: $break-1) { @content; }
@@ -19,8 +19,8 @@ $break-3: 1900px;
   @else if $media == mob-lan {
     @media only screen and (max-width: $break-2) { @content; }
   }
-  @else if $media == printer {
-    @media only print and (max-width: $break-3) { @content; }
+  @else if $media == pda {
+    @media only screen and (max-width: $break-3) { @content; }
   }
 }
 // retina bg
@@ -142,9 +142,23 @@ $break-3: 1900px;
   width: image-width($path);
   height: image-height($path);
 }
+//for retina
+@mixin image-sizer($path){
+  width: image-width($path)/2;
+  height: image-height($path)/2;
+}
+
 @mixin sized-sprite($map, $sprite){
   background: sprite($map, $sprite) no-repeat;
   @include image-size(sprite-file($map, $sprite));
+}
+//for retina
+@mixin sized-spriter($map, $sprite){
+  background: sprite($map, $sprite) no-repeat;
+  $ypos: round(nth(sprite-position($map, $sprite), 2) / 2);
+  background-position: 0 $ypos;
+  @include image-sizer(sprite-file($map, $sprite));
+  @include background-size(ceil(image-width(sprite-path($map)) / 2), ceil(image-height(sprite-path($map)) / 2));
 }
 
 // fonts

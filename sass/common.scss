@@ -51,7 +51,7 @@ body{
     color: #524f4f;
     font: normal 14px/1.2 'Calibri', Arial, sans-serif;
     background: #d4d4d4;
-    @include respond-to(mob-lan) {
+    @include respond-to(pda) {
         min-width: 320px;
     }   
 }
@@ -70,7 +70,7 @@ a{
     height: 100%;
     background: #f9f1de;
     @include box-shadow(0 0 30px rgba(0,0,0,.4));
-    @include respond-to(mob-lan) {
+    @include respond-to(pda) {
         width: 100%;
     }
 }
@@ -90,7 +90,7 @@ a{
 /* ----------------------------------------- Header --------------------------------------------- */
 .header {
     background: #fff;
-    @include respond-to(mob-lan) {
+    @include respond-to(pda) {
         background: none;
         .contacts  {
             display: none;
@@ -104,23 +104,30 @@ a{
     text-align: right;
     border-bottom: 1px solid #d2d2d2;
     @include background-image(linear-gradient(#fff, #e5e5e5));
-    @include respond-to(mob-lan) {
+    @include respond-to(pda) {
         text-align: center;
     }
     button {
-        padding-left: 28px;
-        height: 21px;
+        height: 24px;
+        line-height: 24px;
         border: 0;
         color: #a76dae;
         font-size: 16px;
         @include calibri;
-        background: url(../img/icons/mob.png) 0 50% no-repeat;
+         background: none;
+        //background: url(../img/icons/mob.png) 0 50% no-repeat;
+    }
+    i {
+        display: inline-block;
+        margin: -2px 14px 0 0;
+        @include sized-spriter($icons, mob);
+        vertical-align: middle;
     }
 }
 .header__wrap {
     padding: 5px 48px; 
     @extend %clr;
-    @include respond-to(mob-lan) {
+    @include respond-to(pda) {
         padding: 5px 1% 5px 3%;
     }
 }
@@ -134,26 +141,53 @@ a{
         @include sized-sprite($icons, logo); 
     }
 }
+.header__nav {
+    display: none;
+    float: right;
+    overflow: hidden;
+    @include respond-to(pda) {
+        display: block;
+    }
+    li {
+        text-align: right;
+        padding-right: 25px;
+    }
+    a {
+        font-size: 14px;
+        color: #2e2e2e;
+    }
+}
 .work {
     float: left;
     color: #a76dae;
     font-size: 16px;
+    @include respond-to(pda) {
+        display: none;
+    }
     span {
         display: block;
         margin-bottom: 5px;
-        padding-left: 39px;
+    }
+    i {
+        display: inline-block;
     }
 }
 .work__title { 
-    display: block;
+    display: block; 
 }
 .work__time { 
     color: #404040;
     font-size: 24px;
-    background: url(../img/icons/time.png) 5px 50% no-repeat;
+    i {
+        margin: 0 21px 0 5px;
+        @include sized-spriter($icons, time); 
+    } 
 }
 .work__deliv {
-    background: url(../img/icons/car.png) 0 100% no-repeat;
+    i {
+        @include sized-spriter($icons, car); 
+        margin-right: 11px;
+    }
 }
 
 .contacts {
@@ -242,8 +276,8 @@ a{
 /* ------------------------------------- Independent blocks -------------------------------------- */
 // buttons
 .btn {
-    display: block;
-    width: 120px;
+    display: inline-block;
+    padding: 0 33px;
     height: 20px;
     line-height: 20px;
     color: #fff;
@@ -320,6 +354,12 @@ a{
     overflow: hidden;
     background: url(../img/icons/footer-bg.png) 0 100% repeat-x;
     @include box-shadow(0 20px 30px 6px rgba(0,0,0,.13));
+    .contacts, .work {
+        display: none;
+        @include respond-to(pda) {
+            display: block;
+        }
+    }
 }
 .nav_footer {
     ul {
@@ -366,14 +406,15 @@ a{
         margin-bottom: 9px;
     }
 }
-.contacts_footer {
-    display: none;
-}
+
 /* -------------------------------------- //END Footer ------------------------------------------- */
 
 /* -------------------------------------- Index pages -------------------------------------------- */
 .banner {
     position: relative;
+    @include respond-to(pda) {
+        display: none;
+    }
     img {
         display: block;
     }
@@ -430,6 +471,7 @@ a{
     margin: 0 45px 22px 0;
     width: 194px;
     vertical-align: top;
+    @include transition(all, .3s, ease-in-out);
     &:hover {
         a {
             color: #7d479d;
@@ -517,7 +559,6 @@ a{
     padding-top: 2px;
     li {
         position: relative;
-        padding: 0 5px 0 38px;
         height: 36px;
         line-height: 36px;
         &:after {
@@ -531,6 +572,8 @@ a{
         }
     }
     a {
+        display: block;
+        padding: 0 5px 0 38px;
         color: #4b4b4b;
         font-size: 16px;
         text-transform: uppercase;
@@ -568,7 +611,7 @@ a{
     }
 }
 .inner {
-    @include background-image(linear-gradient(left, #fff 240px, #f9f1de 240px, #f9f1de));
+    @include background-image(linear-gradient(left, #fff 24%, #f9f1de 24%, #f9f1de 100%));
 } 
 
 // About us page 
@@ -669,11 +712,18 @@ a{
 }
 .prod-item__descr {
     overflow: hidden;
+    a {
+        color: #000;
+        text-decoration: none;
+    }
     h2 {
         margin-bottom: 13px;
     }
     p {
         margin-bottom: 7px;
+    }
+    .btn {
+        color: #fff;
     }
 }
 .prod-item__price {
@@ -724,7 +774,7 @@ a{
                 position: absolute;
                 left: 26px;
                 top: 13px;
-                @include sized-sprite($icons, arrow);
+                @include sized-spriter($icons, arrow);
             }
         }
     }
