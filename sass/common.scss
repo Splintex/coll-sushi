@@ -239,13 +239,11 @@ a{
         font-size: 16px;
         text-decoration: none;
         white-space: nowrap;
-        background: url(../img/menu/menu-bg.png) 0 0 repeat-x;
-        //@include sized-sprite($menu, menu-bg);
-        background-repeat: repeat-x;
+        background: url(../img/menu-sprite.png) 0 0 repeat-x;
         @include box-shadow(inset 0 1px 0 rgba(255,255,255,.5));
         &:hover {
             @include transition(all, .5s, ease-in-out);
-            background: url(../img/menu/footer-bg.png) 0 0 repeat-x;
+            background: url(../img/menu-sprite.png) 10px 0 repeat-x;
         }
         &:before,
         &:after {
@@ -255,7 +253,7 @@ a{
             width: 1px;
         }
         &:before {
-            top: 0;
+            top: 0; 
             height: 38px; 
             @include background-image(linear-gradient(#834b81, #43264e));
         }
@@ -267,10 +265,9 @@ a{
     }
     .active {
         color: #7f4989;
-        background: url(../img/menu/menu-act-bg.png) 0 0 repeat-x;
+        background: url(../img/menu-sprite.png) 0 -111px repeat-x;
         &:hover {
-            @include transition(all, .5s, ease-in-out);
-            background: url(../img/menu/menu-act-bg.png) 0 0 repeat-x;
+            background: url(../img/menu-sprite.png) 0 -111px repeat-x;
         }
     }
 }
@@ -291,10 +288,10 @@ a{
     @include calibri;
     @include border-radius(4px);
     @include box-shadow(inset 0 1px 0 rgba(255,255,255,.5));
-    background: url(../img/menu/menu-bg.png) 0 0 repeat-x;
+    background: url(../img/menu-sprite.png) 0 0 repeat-x;
     @include transition(all, .3s, ease-in-out);
     &:hover {
-        background: url(../img/menu/menu-bg.png) 0 100% repeat-x;
+        background: url(../img/menu-sprite.png) 0 -15px repeat-x;
     }
     &:active {
         @include transition(none);
@@ -344,8 +341,6 @@ a{
     margin: 0 auto;
     width: 1000px;
     height: 107px;
-    overflow: hidden;
-    background: url(../img/menu/footer-bg.png) 0 100% repeat-x;
     @include box-shadow(0 20px 30px 6px rgba(0,0,0,.13));
     .contacts, .work {
         display: none;
@@ -384,11 +379,16 @@ a{
     }
     .active {
         color: #fff;
-        background: url(../img/menu/menu-bg.png) 0 0 repeat-x;
+        background: url(../img/menu-sprite.png) 0 0 repeat-x;
         &:hover {
-            background: url(../img/menu/menu-bg.png) 0 0 repeat-x;
+            background: url(../img/menu-sprite.png) 0 0 repeat-x;
         }
     }
+}
+.footer__wrap {
+    overflow: hidden;
+    height: 73px;
+    background: url(../img/menu-sprite.png) 0 -38px repeat-x;
 }
 .copy {
     float: right;
@@ -447,9 +447,9 @@ a{
     }
     .active {
         color: #fff;
-        background: url(../img/menu/menu-bg.png) 0 0 repeat-x;
+        background: url(../img/menu-sprite.png) 0 0 repeat-x;
         &:hover {
-            background: url(../img/menu/menu-bg.png) 0 0 repeat-x;
+            background: url(../img/menu-sprite.png) 0 0 repeat-x;
         }
     }
 }
@@ -745,6 +745,10 @@ a{
 // page 404
 .page-404 {
     background: #fff;
+    margin: 0 auto -73px;
+    .push {
+        height: 73px;
+    }
     .top-bar {
         border-bottom: none;
     }
@@ -773,9 +777,9 @@ a{
             text-decoration: none;
             color: #591366;
             font-size: 16px;
-            background: url(../img/menu/menu-act-bg.png) 0 0 repeat-x;
+            background: url(../img/menu-sprite.png) 0 -111px repeat-x;
             &:hover {
-                background: url(../img/menu/menu-act-bg.png) 100% 0 repeat-x;
+                 background: url(../img/menu-sprite.png) 20px -111px repeat-x;
             }
             &:before {
                 content: "";
@@ -787,7 +791,9 @@ a{
         }
     }
 }
-
+.footer_page-404 {
+    height: 73px;
+}
 // feedback page
 .field {
     margin-bottom: 9px;
