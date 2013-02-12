@@ -9,9 +9,9 @@
 			}
 		}
 		.active {
-        	background: url(../img/icons/menu-bg.png) 0 0 repeat-x;
+        	background: url(../img/menu-sprite.png) 0 0 repeat-x;
         	&:hover {
-				background: url(../img/icons/menu-bg.png) 0 0 repeat-x;
+				background: url(../img/menu-sprite.png) 0 0 repeat-x;
 			}
 		}
 	}
@@ -36,6 +36,32 @@
 	}
 	.btn_gray {
 		background: #dfdfdf;
+	}
+
+	// sprite
+	.work__deliv {
+	    i {
+	        filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+			src='img/icons/car.png',
+			sizingMethod='scale');
+	        background-image: none;
+	    }
+	}
+	.work__time { 
+	    i {
+			filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+			src='img/icons/time.png',
+			sizingMethod='scale');
+	        background-image: none;
+	    } 
+	}
+	.top-bar {
+	    i {
+			filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+			src='img/icons/mob.png',
+			sizingMethod='scale');
+	        background-image: none;
+	    } 
 	}
 }
 // ie7
@@ -98,5 +124,15 @@
 	}
 	.sidebar, .content {
 		background: #f9f1de;
+	}
+	.work__deliv {
+	    i {
+	        display: none;
+	    }
+	}
+	.work__time { 
+	    i {
+			display: none;
+	    } 
 	}
 }
