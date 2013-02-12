@@ -101,12 +101,6 @@ a{
             display: none;
         }
     }
-    .nav {
-        @include respond-to(mob-lan) {
-            //position: fixed;
-            //display: none;
-        }
-    }
 }
 .top-bar {
     padding: 3px 51px 0 0;
@@ -312,6 +306,85 @@ a{
     }
 }
 
+.nav_header {
+    @include respond-to(pda) {
+        ul {
+            border-bottom: 0;
+        }
+        li {
+            a {
+                &:before {
+                    position: absolute;
+                    left: 50%;
+                    top: 10px;
+                    margin-left: -7px;
+                }
+            }
+            &:nth-child(1) {
+                width: 20%;
+                a {
+                    &:before {
+                        display: block;
+                        @include sized-spriter($icons, present);
+                    }
+                }
+            }
+            &:nth-child(2) {
+                width: 25%;
+                a {
+                    &:before {
+                        display: block;
+                        @include sized-spriter($icons, clock);
+                    }
+                }
+            }
+            &:nth-child(3) {
+                width: 20%;
+                a {
+                    &:before {
+                        display: block;
+                        margin-left: -11px;
+                        @include sized-spriter($icons, sushi);
+                    }
+                }
+            }
+            &:nth-child(4) {
+                width: 35%;
+                a {
+                    &:before {
+                        display: block;
+                        @include sized-spriter($icons, book);
+                    }
+                }
+            }
+        }
+        a {
+            position: relative;
+            height: 51px;
+            line-height: 80px;
+            color: #6b3785;
+            font-size: 14px;
+            border-left: 1px solid #d5d5d5;
+            background-position: 0 0;
+            @include background-image(linear-gradient(#fff, #ebebeb));
+            &:hover {
+                @include background-image(linear-gradient(#ebebeb, #fff));
+            }
+            &:after {
+                display: none; 
+            }
+        }
+        .active {
+            text-decoration: underline; 
+            background-position: 0 0;
+            @include background-image(linear-gradient(#efefef, #d3d3d3));
+            &:hover {
+                background-position: 0 0;
+                @include background-image(linear-gradient(#efefef, #d3d3d3));
+            }
+        }
+    }
+}
 /* -------------------------------------- //END Header ------------------------------------------ */
   
 /* ------------------------------------- Independent blocks -------------------------------------- */
@@ -328,10 +401,14 @@ a{
     @include calibri;
     @include border-radius(4px);
     @include box-shadow(inset 0 1px 0 rgba(255,255,255,.5));
-    background: url(../img/menu-sprite.png) 0 0 repeat-x;
+        background-image: url(../img/menu-sprite.png);
+        background-position: 0 0;
+        background-repeat: repeat-x;
     @include transition(all, .3s, ease-in-out);
     &:hover {
-        background: url(../img/menu-sprite.png) 0 -15px repeat-x;
+        background-image: url(../img/menu-sprite.png);
+        background-position: 0 -15px;
+        background-repeat: repeat-x;
     }
     &:active {
         @include transition(none);
@@ -344,6 +421,7 @@ a{
     border: 1px solid #d2d2d2;
     @include background-image(linear-gradient(#fff, #dfdfdf));
     &:hover {
+        background-position: 0 0;
         @include background-image(linear-gradient(#dfdfdf, #fff));
     }
 }
@@ -358,6 +436,18 @@ a{
     padding: 68px 21px;
     width: 750px;
     background: rgba(0,0,0,.62);
+    overflow: hidden;
+    @include respond-to(pda) {
+        width: 100%;
+        left: 0;
+        top: 33px;
+        margin: 0;
+        padding: 10px;
+        @include box-sizing(border-box);
+    }
+}
+.popup__wrap {
+    overflow: hidden;
 }
 .overlay {
     display: none;
@@ -399,7 +489,7 @@ a{
         text-align: center;
     }
     .contacts {
-        padding: 5px;
+        padding: 10px;
         border-top: 1px solid #d2d2d2;
         overflow: hidden;
         div {
@@ -497,6 +587,10 @@ a{
 .nav_products {
     li {
         width: 20%;
+        @include respond-to(pda) {
+            float: none;
+            width: 100%;
+        }
     }
     a {
         height: 37px;
@@ -505,8 +599,18 @@ a{
         text-transform: uppercase;
         @include box-shadow(none);
         @include background-image(linear-gradient(#fff, #e7e7e7));
+        @include respond-to(pda) {
+            color: #fff;
+            text-transform: capitalize;
+            text-shadow: 0 1px 0 #000;
+            background: url(../img/menu-sprite.png) 0 0 repeat-x;
+        }
         &:hover {
             @include background-image(linear-gradient(#e7e7e7, #fff));
+            @include respond-to(pda) {
+                color: #fff;
+                background: url(../img/menu-sprite.png) 0 0 repeat-x;
+            }
         }
         &:before,
         &:after {
@@ -527,6 +631,10 @@ a{
         background: url(../img/menu-sprite.png) 0 0 repeat-x;
         &:hover {
             background: url(../img/menu-sprite.png) 0 0 repeat-x;
+        }
+        @include respond-to(pda) {
+            color: #000;
+            background: url(../img/menu-sprite.png) 0 -111px repeat-x;
         }
     }
 }
@@ -554,7 +662,7 @@ a{
         margin: 0 2% 3% 1%;
     }
     @include respond-to(mob-lan) {
-        width: 45%;
+        width: 44%;
         margin: 0 2% 2% 0;
     }
     @include respond-to(mob) {
@@ -628,6 +736,9 @@ a{
     @include respond-to(pda) {
         padding: 3px 4px 5px;
     }
+    @include respond-to(mob) {
+        padding: 3px 10px 5px;
+    }
 }
 .product__title {
     margin-bottom: 5px;
@@ -652,9 +763,16 @@ a{
 .sidebar {
     float: left;
     width: 240px;
+    @include respond-to(pda) {
+        float: none;
+        width: 100%;
+    }
 }
 .sidebar-nav {
     padding-top: 2px;
+    @include respond-to(pda) {
+        padding-top: 0;
+    }
     li {
         position: relative;
         height: 36px;
@@ -667,6 +785,9 @@ a{
             height: 1px;
             width: 100%;
             @include background-image(linear-gradient(left, #fff, #dfdfdf 25%, #dfdfdf 75%, #fff));
+            @include respond-to(pda) {
+                display: none;
+            }
         }
     }
     a {
@@ -676,14 +797,29 @@ a{
         font-size: 16px;
         text-transform: uppercase;
         text-decoration: none;
+        @include respond-to(pda) {
+            padding: 0;
+            text-align: center;
+            color: #fff;
+            text-transform: capitalize;
+            text-shadow: 0 1px 0 #000;
+            background: url(../img/menu-sprite.png) 0 0 repeat-x;
+        }
         &:hover {
             color: #a76dae;
+            @include respond-to(pda) {
+                color: #fff;
+            }
         }
     }
     .active {
         color: #703c88;
         &:hover {
             color: #703c88;
+        }
+        @include respond-to(pda) {
+            color: #000;
+            background: url(../img/menu-sprite.png) 0 -111px repeat-x;
         }
     }
 } 
@@ -692,6 +828,12 @@ a{
     float: left;
     padding: 16px 15px 0;
     width: 725px;
+    @include respond-to(pda) {
+        float: none;
+        width: 100%;
+        padding: 16px 5px 0;
+        @include box-sizing(border-box);
+    }
     h1 {
         margin-bottom: 18px;
         color: #000;
@@ -716,6 +858,12 @@ a{
 .about-img {
     float: right;
     margin: 0 0 15px 15px;
+    @include respond-to(pda) {
+        float: none;
+        display: block;
+        width: auto;
+        margin: 0 auto 15px;
+    }
 } 
 
 // Actions page
@@ -734,9 +882,18 @@ a{
 .action__img {
     position: relative;
     margin-bottom: 10px;
+    @include respond-to(pda) {
+        width: 100%;
+        @include box-sizing(border-box);
+    }
     img {
         display: block;
         border: 2px solid #cec1c1;
+        @include respond-to(pda) {
+            width: 100%;
+            height: auto;
+            @include box-sizing(border-box);
+        }
     }
     .soc {
         position: absolute;
@@ -776,6 +933,9 @@ a{
             text-decoration: underline;
             &:hover {
                 text-decoration: none;
+            }
+            @include respond-to(pda) {
+                display: none;
             }
         }
         i {
@@ -817,6 +977,10 @@ a{
     margin-right: 15px;
     width: 200px;
     overflow: hidden;
+    @include respond-to(mob-lan) {
+        float: none;
+        margin: 0 auto 10px;
+    }
     img {
         display: block;
     }
@@ -829,12 +993,23 @@ a{
     }
     h2 {
         margin-bottom: 13px;
+        @include respond-to(mob-lan) {
+            text-align: center;
+            margin-bottom: 7px;
+        }
     }
     p {
         margin-bottom: 7px;
+        @include respond-to(mob-lan) {
+            margin-bottom: 10px;
+        }
     }
     .btn {
         color: #fff;
+        @include respond-to(mob-lan) {
+            float: right;
+            margin-top: 4px;
+        }
     }
 }
 .prod-item__price {
@@ -844,6 +1019,9 @@ a{
     font-size: 24px;
     sub {
         font-size: 14px;
+    }
+    @include respond-to(mob-lan) {
+        float: left;
     }
 }
 
@@ -856,21 +1034,48 @@ a{
     }
     .top-bar {
         border-bottom: none;
+        button {
+            display: none;
+        }
     }
     .header__wrap {
         padding-left: 107px;
+        @include respond-to(pda) {
+            padding: 0;
+            .logo {
+                margin-top: 10px;
+                a {
+                    margin: 0 auto;
+                }
+            }
+        }
+    } 
+    .header__nav,
+    .nav_header {
+        display: none;
+    }
+    .logo {
+        float: none; 
     }
     .error {
         margin-bottom: 25px;
         width: 417px;
         height: 223px;
         background: url(../img/page-404.png) 0 0 no-repeat;
+        @include respond-to(pda) {
+            display: none;
+        }
     }
     .error-message {
         margin-top: -18px;
         padding-left: 130px;
         color: #9f9f9f;
         font-size: 30px;
+        @include respond-to(pda) {
+            padding: 0;
+            margin-top: 20px;
+            text-align: center;
+        }
         a {
             position: relative;
             display: block;
@@ -883,6 +1088,9 @@ a{
             color: #591366;
             font-size: 16px;
             background: url(../img/menu-sprite.png) 0 -111px repeat-x;
+            @include respond-to(pda) {
+                margin: 20px auto;
+            }
             &:hover {
                  background: url(../img/menu-sprite.png) 20px -111px repeat-x;
             }
@@ -892,22 +1100,44 @@ a{
                 left: 26px;
                 top: 13px;
                 @include sized-spriter($icons, arrow);
+                @include respond-to(pda) {
+                    left: 15px;
+                    top: 12px;
+                }
             }
         }
-    }
+    } 
 }
 .footer_page-404 {
     height: 73px;
+    .footer__wrap {
+        @include respond-to(pda) {
+            height: 73px;
+            background: url(../img/menu-sprite.png) 0 -38px repeat-x;
+        }
+    }
+    .contacts, 
+    .work {
+        display: none;
+    }
+    
 }
 // feedback page
 .field {
     margin-bottom: 9px;
     overflow: hidden;
+    @include respond-to(pda) {
+    }
     label {
         display: inline-block;
         width: 114px;
         font-size: 14px;
         vertical-align: middle;
+        @include respond-to(pda) {
+            display: block;
+            margin-bottom: 3px;
+            width: 100%;
+        }
     }
     span {
         color: #7d4985;
@@ -927,6 +1157,14 @@ a{
     @include calibri;
     @include border-radius(7px); 
     vertical-align: middle;
+    @include respond-to(pda) {
+        display: block;
+        width: 100%;
+        height: 25px;
+        line-height: 1;
+        font-size: 14px;
+        @include box-sizing(border-box);
+    }
     &:focus {
         @include box-shadow(inset 0 0 10px rgba(0,0,0,.12));
     }
@@ -940,10 +1178,22 @@ a{
 .field_btn {
     padding-left: 146px;
     margin-top: 31px;
+    @include respond-to(pda) {
+        padding-left: 0;
+        margin-top: 15px;
+    }
     .btn {
         float: left;
         margin-right: 14px;
         @include border-radius(6px);
+        @include respond-to(pda) {
+            float: right;
+        }
+    }
+    .btn_gray {
+        @include respond-to(pda) {
+            float: left;
+        }
     }
 }
 
@@ -961,30 +1211,9 @@ a{
 
 /* -------------------------------------- //END Inner pages -------------------------------------- */
 
-.index {
+.inner {
     @include respond-to(pda) {
-        .header {
-            .nav {
-                li {
-                   width: auto;
-                }
-            }
-        }
-        .nav_products {
-            li {
-                float: none;
-                width: 100%;
-            }
-            a {
-                color: #fff;
-                text-transform: capitalize;
-                text-shadow: 0 1px 0 #000;
-                background: url(../img/menu-sprite.png) 0 0 repeat-x;
-            }
-            .active {
-                color: #000;
-                background: url(../img/menu-sprite.png) 0 -111px repeat-x;
-            }
-        }
+        padding-bottom: 10px;
+        background: #f9f1de;
     }
 }
