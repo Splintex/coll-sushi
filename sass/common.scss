@@ -135,14 +135,15 @@ a{
     float: left;
     margin-right: 130px;
     @extend %hide-text;
-    
     a {
         display: block;
-        @include sized-sprite($icons, logo); 
+        width: 255px;
+        height: 89px;
+        background: url(../img/logo.png) 0 0 no-repeat; 
     }
 }
 .header__nav {
-    display: none;
+    display: none; 
     float: right;
     overflow: hidden;
     @include respond-to(pda) {
@@ -237,11 +238,14 @@ a{
         color: #fff;
         font-size: 16px;
         text-decoration: none;
-        background: url(../img/icons/menu-bg.png) 0 0 repeat-x;
+        white-space: nowrap;
+        background: url(../img/menu/menu-bg.png) 0 0 repeat-x;
+        //@include sized-sprite($menu, menu-bg);
+        background-repeat: repeat-x;
         @include box-shadow(inset 0 1px 0 rgba(255,255,255,.5));
         &:hover {
             @include transition(all, .5s, ease-in-out);
-            background: url(../img/icons/footer-bg.png) 0 0 repeat-x;
+            background: url(../img/menu/footer-bg.png) 0 0 repeat-x;
         }
         &:before,
         &:after {
@@ -252,7 +256,7 @@ a{
         }
         &:before {
             top: 0;
-            height: 38px;
+            height: 38px; 
             @include background-image(linear-gradient(#834b81, #43264e));
         }
         &:after {
@@ -263,10 +267,10 @@ a{
     }
     .active {
         color: #7f4989;
-        background: url(../img/icons/menu-act-bg.png) 0 0 repeat-x;
+        background: url(../img/menu/menu-act-bg.png) 0 0 repeat-x;
         &:hover {
             @include transition(all, .5s, ease-in-out);
-            background: url(../img/icons/menu-act-bg.png) 0 0 repeat-x;
+            background: url(../img/menu/menu-act-bg.png) 0 0 repeat-x;
         }
     }
 }
@@ -287,10 +291,10 @@ a{
     @include calibri;
     @include border-radius(4px);
     @include box-shadow(inset 0 1px 0 rgba(255,255,255,.5));
-    background: url(../img/icons/menu-bg.png) 0 0 repeat-x;
+    background: url(../img/menu/menu-bg.png) 0 0 repeat-x;
     @include transition(all, .3s, ease-in-out);
     &:hover {
-        background: url(../img/icons/menu-bg.png) 0 100% repeat-x;
+        background: url(../img/menu/menu-bg.png) 0 100% repeat-x;
     }
     &:active {
         @include transition(none);
@@ -331,17 +335,6 @@ a{
 }
 
 // soc icons
-.soc {
-    overflow: hidden;
-    a {
-        float: left;
-        margin-right: 3px;
-    }
-    .odn {@include sized-sprite($icons, fb);}
-    .tw {@include sized-sprite($icons, fb);}
-    .fb {@include sized-sprite($icons, fb);}
-    .vk {@include sized-sprite($icons, fb);}
-}
 
 /* ---------------------------------- //END Independent blocks ----------------------------------- */
 
@@ -352,7 +345,7 @@ a{
     width: 1000px;
     height: 107px;
     overflow: hidden;
-    background: url(../img/icons/footer-bg.png) 0 100% repeat-x;
+    background: url(../img/menu/footer-bg.png) 0 100% repeat-x;
     @include box-shadow(0 20px 30px 6px rgba(0,0,0,.13));
     .contacts, .work {
         display: none;
@@ -391,9 +384,9 @@ a{
     }
     .active {
         color: #fff;
-        background: url(../img/icons/menu-bg.png) 0 0 repeat-x;
+        background: url(../img/menu/menu-bg.png) 0 0 repeat-x;
         &:hover {
-            background: url(../img/icons/menu-bg.png) 0 0 repeat-x;
+            background: url(../img/menu/menu-bg.png) 0 0 repeat-x;
         }
     }
 }
@@ -454,9 +447,9 @@ a{
     }
     .active {
         color: #fff;
-        background: url(../img/icons/menu-bg.png) 0 0 repeat-x;
+        background: url(../img/menu/menu-bg.png) 0 0 repeat-x;
         &:hover {
-            background: url(../img/icons/menu-bg.png) 0 0 repeat-x;
+            background: url(../img/menu/menu-bg.png) 0 0 repeat-x;
         }
     }
 }
@@ -671,20 +664,33 @@ a{
         font-size: 14px;
         font-family: Arial;
     }
-    .prev {
+    .prev, .next {
         font-size: 12px;
-        padding-left: 27px;
-        background: url(../img/icons/prev.png) 0 50% no-repeat;
+        text-decoration: none;
+        span {
+            text-decoration: underline;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+        i {
+            font-size: 20px;
+            
+            margin-right: 4px;
+        }
     }
     .next {
-        font-size: 12px;
-        padding-right: 27px;
-        background: url(../img/icons/next.png) 100% 50% no-repeat;
+        i {
+            margin-left: 4px;
+        }
     }
     .inactive {
         color: #000;
         text-decoration: none;
         cursor: default;
+        span {
+            text-decoration: none;
+        }
     }
     .active {
         background: #e5e5e5;
@@ -747,7 +753,9 @@ a{
     }
     .error {
         margin-bottom: 25px;
-        @include sized-sprite($icons, page-404);
+        width: 417px;
+        height: 223px;
+        background: url(../img/page-404.png) 0 0 no-repeat;
     }
     .error-message {
         margin-top: -18px;
@@ -765,9 +773,9 @@ a{
             text-decoration: none;
             color: #591366;
             font-size: 16px;
-            background: url(../img/icons/menu-act-bg.png) 0 0 repeat-x;
+            background: url(../img/menu/menu-act-bg.png) 0 0 repeat-x;
             &:hover {
-                background: url(../img/icons/menu-act-bg.png) 100% 0 repeat-x;
+                background: url(../img/menu/menu-act-bg.png) 100% 0 repeat-x;
             }
             &:before {
                 content: "";

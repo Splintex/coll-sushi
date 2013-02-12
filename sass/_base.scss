@@ -7,7 +7,7 @@ $experimental-support-for-svg: true;
 
 // global sprites
 $icons: sprite-map("icons/*.png", $spacing: 10px);
-
+$menu: sprite-map("menu/*.png", $spacing: 10px);
 // responsive
 $break-1: 320px;
 $break-2: 480px;
