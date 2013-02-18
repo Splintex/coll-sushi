@@ -1,5 +1,4 @@
 $(document).ready(function() {
-	$(".fancybox").fancybox();
 	$(".top-bar button").click(function(){
 		$(".call").fadeIn();
 		$(".overlay").show();
@@ -8,4 +7,17 @@ $(document).ready(function() {
 		$(".call").fadeOut();
 		$(this).hide();
 	});
+
+// fancybox
+    var window_width = $(window).width();
+    if (window_width > 767) {
+        $(".fancybox").fancybox({
+            // insert parameters here
+        });
+    }
+    else {
+        $("a.fancybox").click(function(){
+            return false;
+        });
+    }
 });

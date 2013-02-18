@@ -448,12 +448,25 @@ a{
         margin: 0;
         padding: 10px;
         @include box-sizing(border-box);
-    }
+    } 
 }
 .popup__wrap {
     overflow: hidden;
 }
 */
+.fancybox-skin {
+    padding: 68px 21px !important;
+    background: rgba(0,0,0,.62) !important;
+    
+}
+.fancybox-overlay {
+    .fancybox-opened  {
+        .fancybox-skin {
+            @include border-radius(0);
+            @include box-shadow(none);
+        }
+    }
+}
 .overlay {
     display: none;
     position: fixed;

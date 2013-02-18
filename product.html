@@ -14,14 +14,39 @@
     <!--[if lt IE 9]> 
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script> 
     <![endif]-->
-
 </head>
 <body>
 <section class="l-layout inner">
     <!-- Header -->
     <header class="header">
         <div class="top-bar">
-            <button><i></i>Заказать звонок</button>
+            <button>
+                <i></i>Заказать звонок
+                <div class="call">
+                    <span class="call__title">Хотите сделать заказ? Мы Вам презвоним!</span>
+                    <fieldset class="field">
+                        <label>Ваше имя:</label>
+                        <input class="input name" type="text">
+                    </fieldset>
+                    <fieldset class="field">
+                        <label>Контактный телефон:</label>
+                        <strong>+7(</strong>
+                        <input class="input code" type="text">
+                        <strong>)</strong>
+                        <input class="input number" type="text">
+                    </fieldset>
+                    <fieldset class="field field_check">
+                        <label class="ckeckbox" for="check1"><input type="checkbox" id="check1">Контактный телефон:</label>
+                    </fieldset>
+                     <fieldset class="field field_check">
+                        <label class="ckeckbox" for="check2"><input type="checkbox" id="check2">Перезвонить в</label>
+                        <input class="input code" type="text">
+                    </fieldset>
+                    <fieldset class="field field_submit">
+                        <input class="btn" type="submit" value="Отправить">
+                    </fieldset>
+                </div>
+            </button>
         </div>
         <div class="header__wrap">  
             <h1 class="logo"><a href="#">Coll sushi</a></h1>
@@ -75,7 +100,7 @@
         <div class="content">
             <div class="prod-item">
                 <div class="prod-item__img">
-                    <a class="fancybox" href="img/1_b.jpg" data-fancybox-group="gallery"><img src="img/1_s.jpg" alt="" /></a>
+                    <a class="fancybox" href="img/1_b.jpg" data-fancybox-group="gallery"><img src="img/1_s.jpg" alt="" width="200" height="135"></a>
                 </div>
                 <div class="prod-item__descr">
                     <h2><a href="#">Сякэ темпура</a></h2>
@@ -86,7 +111,7 @@
             </div>  
             <div class="prod-item">
                 <div class="prod-item__img">
-                    <a class="fancybox" href="img/1_b.jpg" data-fancybox-group="gallery2"><img src="img/1_s.jpg" alt="" /></a>
+                    <a class="fancybox" href="img/1_b.jpg" data-fancybox-group="gallery2"><img src="img/1_s.jpg" alt="" width="200" height="135"></a>
                 </div>
                 <div class="prod-item__descr">
                     <h2><a href="#">Сякэ темпура</a></h2>
@@ -94,10 +119,10 @@
                     <span class="prod-item__price">250 <sub>руб.</sub></span>
                     <a href="#" class="btn">Заказать</a>
                 </div>
-            </div>
+            </div> 
             <div class="prod-item">
                 <div class="prod-item__img">
-                    <a class="fancybox" href="img/1_b.jpg" data-fancybox-group="gallery3"><img src="img/1_s.jpg" alt="" /></a>
+                    <a class="fancybox" href="img/1_b.jpg" data-fancybox-group="gallery3"><img src="img/1_s.jpg" alt="" width="200" height="135"></a>
                 </div>
                 <div class="prod-item__descr">
                     <h2><a href="#">Сякэ темпура</a></h2>
@@ -105,7 +130,7 @@
                     <span class="prod-item__price">250 <sub>руб.</sub></span>
                     <a href="#" class="btn">Заказать</a>
                 </div>
-            </div>
+            </div> 
             <div class="pagin">
                 <a href="#" class="prev inactive"><i>←</i><span>Предыдущая</span></a>
                 <a href="#" class="active">1</a>
@@ -156,11 +181,6 @@
         </div>
     </div>
 </footer>
-<!-- <div class="popup">
-    <div class="popup__wrap">
-        <img src="http://placehold.it/750x450" alt="">
-    </div>
-</div> -->
 <span class="overlay"></span>
 </body>
 </html>

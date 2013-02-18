@@ -7,7 +7,9 @@
     <meta name="format-detection" content ="telephone=no">
 	<title>About us</title>
 	<link rel="stylesheet" media="screen" href="css/screen.css" >
-    <script src="js/jquery.tools.min.js"></script>
+	<link rel="stylesheet" media="screen" href="css/jquery.fancybox.css" >
+    <script src="js/jquery-1.9.0.min.js"></script>
+    <script src="js/jquery.fancybox.js"></script>
     <script src="js/common.js"></script>  
     <!--[if lt IE 9]> 
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script> 
@@ -18,7 +20,33 @@
     <!-- Header -->
     <header class="header">
         <div class="top-bar">
-            <button><i></i>Заказать звонок</button>
+            <button>
+                <i></i>Заказать звонок
+                <div class="call">
+                    <span class="call__title">Хотите сделать заказ? Мы Вам презвоним!</span>
+                    <fieldset class="field">
+                        <label>Ваше имя:</label>
+                        <input class="input name" type="text">
+                    </fieldset>
+                    <fieldset class="field">
+                        <label>Контактный телефон:</label>
+                        <strong>+7(</strong>
+                        <input class="input code" type="text">
+                        <strong>)</strong>
+                        <input class="input number" type="text">
+                    </fieldset>
+                    <fieldset class="field field_check">
+                        <label class="ckeckbox" for="check1"><input type="checkbox" id="check1">Контактный телефон:</label>
+                    </fieldset>
+                     <fieldset class="field field_check">
+                        <label class="ckeckbox" for="check2"><input type="checkbox" id="check2">Перезвонить в</label>
+                        <input class="input code" type="text">
+                    </fieldset>
+                    <fieldset class="field field_submit">
+                        <input class="btn" type="submit" value="Отправить">
+                    </fieldset>
+                </div>
+            </button>
         </div>
         <div class="header__wrap">  
             <h1 class="logo"><a href="#">Coll sushi</a></h1>
@@ -118,11 +146,6 @@
         </div>
     </div>
 </footer>
-<div class="popup">
-    <div class="popup__wrap">
-        <img src="http://placehold.it/750x450" alt="">
-    </div>
-</div>
 <span class="overlay"></span>
 </body>
 </html>
