@@ -112,6 +112,7 @@ a{
         text-align: center;
     }
     button {
+        position: relative;
         height: 24px;
         line-height: 24px;
         border: 0;
@@ -140,8 +141,8 @@ a{
     @include respond-to(pda) {
         margin: 0;
     }
-    @include respond-to(mob) {
-        float: none;
+    @include respond-to(mob-lan) {
+        padding-top: 12px;
     }
     @extend %hide-text;
     a {
@@ -149,8 +150,11 @@ a{
         width: 255px;
         height: 89px;
         background: url(../img/logo.png) 0 0 no-repeat; 
-        @include respond-to(mob) {
-           margin: 0 auto;
+        @include respond-to(mob-lan) {
+            margin: 0 auto;
+            width: 127px; 
+            height: 45px;
+            @include background-size(100%, 100%);
         }
     }
 }
@@ -276,8 +280,7 @@ a{
         background: url(../img/menu-sprite.png) 0 0 repeat-x;
         @include box-shadow(inset 0 1px 0 rgba(255,255,255,.5));
         &:hover {
-            @include transition(all, .5s, ease-in-out);
-            background: url(../img/menu-sprite.png) 10px 0 repeat-x;
+            background: url(../img/menu-sprite.png) 100% 100% repeat-x;
         }
         &:before,
         &:after {
@@ -426,6 +429,7 @@ a{
     }
 }
 // popup
+/*
 .popup {
     display: none;
     position: absolute;
@@ -449,6 +453,7 @@ a{
 .popup__wrap {
     overflow: hidden;
 }
+*/
 .overlay {
     display: none;
     position: fixed;
@@ -459,6 +464,76 @@ a{
     z-index: 1000;
     height: 100%;
     width: 100%;
+}
+
+.call {
+    display: none;
+    position: absolute;
+    z-index: 2000;
+    top: 33px;
+    left: -65px;
+    padding: 5px 15px 0 18px;
+    width: 267px;
+    background: #fff;
+    border: 1px solid #dbdbdb;
+    cursor: default;
+    @include border-radius(6px);
+    &:before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: -11px;
+        margin-left: -12px;
+         @include sized-sprite($icons, corner);
+    }
+    .field {
+        text-align: left;
+        label {
+            display: block;
+            width: 100%;
+            color: #524f4f;
+            text-align: left;
+        }
+        .ckeckbox {
+            display: inline-block;
+            width: auto;
+        }
+    }
+    .field_check {
+        margin-bottom: 0;
+        .code {
+            margin-left: 10px;
+        }
+    }
+    .field_submit {
+        margin-top: 10px;
+        text-align: center;
+    }
+    .name {
+        width: 251px;
+    }
+    .code {
+        width: 49px;
+        margin: 0;
+    }
+    .number {
+        width: 119px;
+    }
+    strong {
+        display: inline-block;
+        margin: 0 2px;
+        font-weight: normal;
+        vertical-align: middle;
+        color: #202020;
+    }
+}
+.call__title {
+    display: block;
+    margin: 0 auto;
+    width: 135px;
+    text-align: center;
+    color: #693680;
+    font-size: 14px;
 }
 
 // soc icons
@@ -604,11 +679,13 @@ a{
             text-transform: capitalize;
             text-shadow: 0 1px 0 #000;
             background: url(../img/menu-sprite.png) 0 0 repeat-x;
+            @include background-size(auto, auto);
         }
         &:hover {
             @include background-image(linear-gradient(#e7e7e7, #fff));
             @include respond-to(pda) {
                 color: #fff;
+                @include background-size(auto, auto);
                 background: url(../img/menu-sprite.png) 0 0 repeat-x;
             }
         }
@@ -738,6 +815,11 @@ a{
     }
     @include respond-to(mob) {
         padding: 3px 10px 5px;
+    }
+    a {
+        color: #524f4f;
+        text-decoration: none;
+        @include transition(all, .3s, ease-in-out);
     }
 }
 .product__title {
@@ -1000,6 +1082,7 @@ a{
     }
     p {
         margin-bottom: 7px;
+        cursor: pointer;
         @include respond-to(mob-lan) {
             margin-bottom: 10px;
         }
@@ -1051,7 +1134,9 @@ a{
         }
     } 
     .header__nav,
-    .nav_header {
+    .nav_header,
+    .work,
+    .contacts {
         display: none;
     }
     .logo {
@@ -1117,7 +1202,9 @@ a{
         }
     }
     .contacts, 
-    .work {
+    .work,
+    .nav_footer,
+    .copy {
         display: none;
     }
     
@@ -1142,6 +1229,13 @@ a{
     span {
         color: #7d4985;
         font-size: 12px;
+    }
+}
+.ckeckbox {
+    display: inline-block;
+    input {
+        vertical-align: middle;
+        margin-right: 5px;
     }
 }
 .input {

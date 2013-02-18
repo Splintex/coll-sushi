@@ -6,12 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content ="telephone=no">
 	<title>Product</title>
-	<link rel="stylesheet" media="screen" href="css/screen.css" >
-    <script src="js/jquery.tools.min.js"></script>
+    <link rel="stylesheet" media="screen" href="css/screen.css" >
+	<link rel="stylesheet" media="screen" href="css/jquery.fancybox.css" >
+    <script src="js/jquery-1.9.0.min.js"></script>
+    <script src="js/jquery.fancybox.js"></script>
     <script src="js/common.js"></script>  
     <!--[if lt IE 9]> 
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script> 
     <![endif]-->
+
 </head>
 <body>
 <section class="l-layout inner">
@@ -72,37 +75,37 @@
         <div class="content">
             <div class="prod-item">
                 <div class="prod-item__img">
-                    <a href="#"><img src="http://placehold.it/200x134" alt=""></a>
+                    <a class="fancybox" href="img/1_b.jpg" data-fancybox-group="gallery"><img src="img/1_s.jpg" alt="" /></a>
                 </div>
                 <div class="prod-item__descr">
                     <h2><a href="#">Сякэ темпура</a></h2>
-                    <p><a href="#">Лосось, креветка, огурец, тобико, васаби</a></p>
+                    <p onclick="#">Лосось, креветка, огурец, тобико, васаби</p>
                     <span class="prod-item__price">250 <sub>руб.</sub></span>
                     <a href="#" class="btn">Заказать</a>
                 </div>
             </div>  
             <div class="prod-item">
                 <div class="prod-item__img">
-                    <a href="#"><img src="http://placehold.it/200x134" alt=""></a>
+                    <a class="fancybox" href="img/1_b.jpg" data-fancybox-group="gallery2"><img src="img/1_s.jpg" alt="" /></a>
                 </div>
                 <div class="prod-item__descr">
                     <h2><a href="#">Сякэ темпура</a></h2>
-                    <p><a href="#">Лосось, креветка, огурец, тобико, васаби</a></p>
+                    <p onclick="#">Лосось, креветка, огурец, тобико, васаби</p>
                     <span class="prod-item__price">250 <sub>руб.</sub></span>
                     <a href="#" class="btn">Заказать</a>
                 </div>
-            </div> 
+            </div>
             <div class="prod-item">
                 <div class="prod-item__img">
-                    <a href="#"><img src="http://placehold.it/200x134" alt=""></a>
+                    <a class="fancybox" href="img/1_b.jpg" data-fancybox-group="gallery3"><img src="img/1_s.jpg" alt="" /></a>
                 </div>
                 <div class="prod-item__descr">
                     <h2><a href="#">Сякэ темпура</a></h2>
-                    <p><a href="#">Лосось, креветка, огурец, тобико, васаби</a></p>
+                    <p onclick="#">Лосось, креветка, огурец, тобико, васаби</p>
                     <span class="prod-item__price">250 <sub>руб.</sub></span>
                     <a href="#" class="btn">Заказать</a>
                 </div>
-            </div> 
+            </div>
             <div class="pagin">
                 <a href="#" class="prev inactive"><i>←</i><span>Предыдущая</span></a>
                 <a href="#" class="active">1</a>
@@ -153,11 +156,11 @@
         </div>
     </div>
 </footer>
-<div class="popup">
+<!-- <div class="popup">
     <div class="popup__wrap">
         <img src="http://placehold.it/750x450" alt="">
     </div>
-</div>
+</div> -->
 <span class="overlay"></span>
 </body>
 </html>

@@ -1,10 +1,11 @@
 $(document).ready(function() {
+	$(".fancybox").fancybox();
 	$(".top-bar button").click(function(){
-		$(".popup").fadeIn();
+		$(".call").fadeIn();
 		$(".overlay").show();
 	});
 	$(".overlay").click(function(){
-		$(".popup").fadeOut();
+		$(".call").fadeOut();
 		$(this).hide();
 	});
 });
